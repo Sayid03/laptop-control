@@ -8,7 +8,15 @@ from telegram.ext import (
 )
 
 from config import BOT_TOKEN
-from handlers import start, help_command, myid
+from handlers import (
+    start, 
+    help_command, 
+    myid,
+    stats,
+    battery,
+    uptime,
+    processes
+    )
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -35,6 +43,11 @@ async def main():
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("help", help_command))
     application.add_handler(CommandHandler("myid", myid))
+
+    application.add_handler(CommandHandler("stats", stats))
+    application.add_handler(CommandHandler("battery", battery))
+    application.add_handler(CommandHandler("uptime", uptime))
+    application.add_handler(CommandHandler("processes", processes))
 
     print("Laptop Controller is running...")
 
