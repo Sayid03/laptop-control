@@ -36,9 +36,15 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     message = (
         "Laptop Controller — Commands\n\n"
+        "⚙ General\n"
         "/start - Start the bot\n"
         "/help - Show available commands\n"
-        "/myid - Get your Telegram user ID"
+        "/myid - Get your Telegram user ID\n\n"
+        "📊 Monitoring\n"
+        "/stats - System statistics\n"
+        "/battery - Battery information\n"
+        "/uptime - System uptime\n"
+        "/processes - Top processes by RAM\n"
     )
 
     await update.message.reply_text(message)
